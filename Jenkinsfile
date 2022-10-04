@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat encoding: 'ASCII', returnStatus: true, script: 'npm run test'
+                bat encoding: 'ASCII', returnStatus: true, script: 'npm test'
             }
         }
     }

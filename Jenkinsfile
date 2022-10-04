@@ -17,5 +17,16 @@ pipeline {
                 bat encoding: 'ASCII', returnStatus: true, script: 'npm test'
             }
         }
+        stage('Archive artefacts') {
+            steps {
+                script: 'archiveArtifacts artifacts: "newman/*.xml", followSymlinks: false'
+            }
+        }
+        stage('Archive artefacts') {
+            steps {
+                script: 'publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "newman, reportFiles: "index.html", reportName: "HTML Report", reportTitles: ''])
+'
+            }
+        }
     }
 }

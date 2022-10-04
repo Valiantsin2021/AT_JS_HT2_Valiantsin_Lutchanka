@@ -1,0 +1,15 @@
+module.exports = {
+    authCheckBody: {"query": "test"},
+    uploadDropBoxAPIArg: { path: "/text.txt", mode: "add", autorename: true, mute: false, strict_conflict: false },
+    uploadContentType: 'application/octet-stream',
+    fileName: 'text.txt',
+    test: 'test',
+    metadata: ['name', 'path_lower', 'path_display', 'id', 'client_modified', 'server_modified', 'rev', 'size', 'is_downloadable', 'content_hash'],
+    uploadResponseLength: 10,
+    metadataResponseLength: 11,
+    path: '/text.txt',
+    wrongPath: '/api',
+    errorResponse: ['error_summary', 'error'],
+    ContentTypeAuthHeader: 'application/x-www-form-urlencoded',
+    ContentTypeHeader: 'application/json',
+}

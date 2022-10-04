@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Archive artefacts') {
             steps {
-                script: 'publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "newman, reportFiles: "index.html", reportName: "HTML Report", reportTitles: ''])
+                script: 'publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "newman, reportFiles: "index.html", reportName: "HTML Report"])'
 '
             }
         }

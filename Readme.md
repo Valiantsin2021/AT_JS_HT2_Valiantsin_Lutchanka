@@ -1,13 +1,20 @@
-# JS automation tests using Postman and Cypress
+# JS automation API tests using Postman and Cypress
 
-## This repository purpose is to perform API positive and negative test automation of DropBox upload and delete file features https://www.dropbox.com/
+## This repository purpose is to perform API positive and negative test automation of DropBox upload, check metadata and delete file features https://www.dropbox.com/
 
-## The test suites purpose is to perform the following assertions:
+The Dropbox account under the test is created for the testing purposes only and is not a private or personal. Authorization credentials provided in tests are for learning purposes only and to provide the possibility to check the automation task accomplishment.
 
-##### 1. Retrieve the OAuth 2.0 token for authorizing API requests
-##### 2. Upload the test text file (text.txt) on the Dropbox and check it is uploaded successfully
-##### 3. Check the uploaded file Metadata is correct
-##### 4. Delete the uploaded file (text.txt) and check it is deleted successfully
+## Technology used
+
+- Postman (Newman)
+- Cypress 
+
+## The test suites purpose is to perform the following scenarios:
+
+##### 1. Retrieve the OAuth 2.0 token for authorizing API requests and check user and app authorization
+##### 2. Upload the test text file (text.txt) on the Dropbox and check if it is uploaded successfully
+##### 3. Check if the uploaded file Metadata is correct
+##### 4. Delete the uploaded file (text.txt) and check if it is deleted successfully
 ##### 5. Perform negative tests for upload, search and delete requests with assertions on wrong endpoints and wrong body/headers data
 
 ## Job done:
@@ -20,6 +27,8 @@
 4.  Jenkinsfile
 5.  Github Actions yml file
 6.  Html report publish on gh-pages
+7.  Response json schema validation for upload, check metadata and delete file scenarios.
+8.  Pre-request scripts for shared tests for various test cases to save in environmental variables
 
 ### Cypress
 
@@ -39,9 +48,13 @@
 3. Install dependencies with "npm install"
 4. To run tests - "npm test"
 
-### for Cypress tests
+### For Cypress tests
 
 1. Clone Cypress branch of this repository
 2. Navigate to the folder of cloned repository and run terminal 
 3. Install dependencies with  "npm install"
 4. To run tests - "npm test"
+
+### To run tests natively in Postman 
+
+1. Import to your Postman workspace the Dropbox-API-upload-download-tests.postman_collection.json and Dropbox.postman_environment.json files from the master branch and run the collection with the corresponding environment

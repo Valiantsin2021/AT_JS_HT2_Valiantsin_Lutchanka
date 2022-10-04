@@ -19,13 +19,7 @@ pipeline {
         }
         stage('Archive artefacts') {
             steps {
-                script: 'archiveArtifacts artifacts: "newman/*.xml", followSymlinks: false'
-            }
-        }
-        stage('Archive artefacts') {
-            steps {
-                script: 'publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "newman, reportFiles: "index.html", reportName: "HTML Report"])'
-'
+                archiveArtifacts artifacts: "newman/*.xml", followSymlinks: false
             }
         }
     }

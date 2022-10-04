@@ -1,0 +1,16 @@
+{
+  "name": "DropBox API test",
+  "version": "1.0.0",
+  "description": "DropBox Api tests with Postman using Newman",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run Dropbox-API-upload-download-tests.postman_collection.json --environment Dropbox.postman_environment.json --reporters \"cli,htmlextra,junit\" --reporter-htmlextra-export ./newman/index.html --reporter-junit-export ./newman/report.xml --disable-unicode --color off"
+  },
+  "keywords": [],
+  "author": "Valiantsin Lutchanka",
+  "license": "ISC",
+  "devDependencies": {
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11"
+  }
+}

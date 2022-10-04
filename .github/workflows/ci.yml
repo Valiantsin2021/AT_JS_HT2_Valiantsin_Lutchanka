@@ -1,0 +1,44 @@
+name: DropBox API tests run
+
+on: 
+  push:
+      branches:
+      - master
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+
+    - name: Install Newman
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-htmlextra
+      
+    - name: Make directory for results
+      run: mkdir -p newman
+
+    - name: Run API Tests
+      run: npm test
+
+    - name: Output test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: RunReports
+        path: newman
+    - name: Download all workflow run artifacts
+      uses: actions/download-artifact@v3
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: newman

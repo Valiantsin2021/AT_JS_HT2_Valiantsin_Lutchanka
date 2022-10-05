@@ -1,4 +1,7 @@
-const CryptoJS = require('crypto-js')
+const CryptoJS = require('crypto-js');
+const chaiJsonSchema = require('chai-json-schema');
+chai.use(chaiJsonSchema);
+const { uploadResponseSchema, getMetadataResponseSchema } = require('../fixtures/schemas')
 const { 
   authCheckBody, 
   uploadDropBoxAPIArg,
@@ -93,6 +96,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     cy.get('@upload')
     .then(response => {
       expect(response.status).to.be.equal(200)
+      expect(response.body).to.be.jsonSchema(uploadResponseSchema);
       expect(response.body.name).to.equal(fileName)
       expect(Object.keys(response.body).length).to.equal(uploadResponseLength)
       metadata.forEach((key,i) => {
@@ -121,6 +125,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     cy.get('@metadataCheck')
     .then(response => {
       expect(response.status).to.be.equal(200)
+      expect(response.body).to.be.jsonSchema(getMetadataResponseSchema);
       expect(Object.keys(response.body).length).to.equal(metadataResponseLength)
       Object.values(response.body).slice(1).forEach((el, i) => {
         expect(el).to.equal(metadataValues[i])

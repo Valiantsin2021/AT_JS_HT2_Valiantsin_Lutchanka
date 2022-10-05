@@ -13,6 +13,7 @@
   "author": "Valiantsin Lutchanka",
   "license": "ISC",
   "devDependencies": {
+    "chai-json-schema": "^1.5.1",
     "crypto-js": "^4.1.1",
     "cypress": "^10.9.0",
     "cypress-multi-reporters": "^1.6.1",

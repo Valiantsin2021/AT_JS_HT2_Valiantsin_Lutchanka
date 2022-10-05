@@ -613,6 +613,10 @@
 											"\r",
 											"pm.test(`Check response keys values are equal ${pm.environment.get('metadataValues')}`, function () {\r",
 											"    pm.expect(Object.values(response).slice(1)).to.eql(pm.environment.get('metadataValues'));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validate response json schema\", () => {\r",
+											"    pm.response.to.have.jsonSchema(pm.environment.get(\"metadataResponseSchema\"))\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -624,9 +628,9 @@
 										"exec": [
 											"const schema = {\r",
 											"    \"type\": \"object\",\r",
-											"    \"required\": ['tag', 'name', 'path_lower', 'path_display', 'id', 'client_modified', 'server_modified', 'rev', 'size', 'is_downloadable', 'content_hash'],\r",
+											"    \"required\": ['.tag', 'name', 'path_lower', 'path_display', 'id', 'client_modified', 'server_modified', 'rev', 'size', 'is_downloadable', 'content_hash'],\r",
 											"    \"properties\":  {\r",
-											"        \"tag\": {\r",
+											"        \".tag\": {\r",
 											"            \"type\": \"string\",\r",
 											"        },\r",
 											"        \"name\": {\r",

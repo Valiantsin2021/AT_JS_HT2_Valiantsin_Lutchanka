@@ -36,12 +36,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "yc9q84x3d4swx3m",
+									"value": "{{appSecret}}",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "a7c7fflsxxus9n0",
+									"value": "{{appKey}}",
 									"type": "string"
 								}
 							]
@@ -53,7 +53,7 @@
 							"urlencoded": [
 								{
 									"key": "refresh_token",
-									"value": "DiZYRHehtyIAAAAAAAAAAdhL6UeMu4HplXWBZdz262N-lNynUgpdpBRSD8mOAXUV",
+									"value": "{{refresh}}",
 									"type": "text"
 								},
 								{
@@ -161,12 +161,12 @@
 									"basic": [
 										{
 											"key": "password",
-											"value": "yc9q84x3d4swx3m",
+											"value": "{{appSecret}}",
 											"type": "string"
 										},
 										{
 											"key": "username",
-											"value": "a7c7fflsxxus9n0",
+											"value": "{{appKey}}",
 											"type": "string"
 										}
 									]

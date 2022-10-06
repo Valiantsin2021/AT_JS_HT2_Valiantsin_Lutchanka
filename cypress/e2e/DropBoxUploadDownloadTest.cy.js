@@ -1,7 +1,7 @@
 const CryptoJS = require('crypto-js');
 const chaiJsonSchema = require('chai-json-schema');
 chai.use(chaiJsonSchema);
-const { uploadResponseSchema, getMetadataResponseSchema } = require('../fixtures/schemas')
+const { uploadResponseSchema, getMetadataResponseSchema, deleteSchema } = require('../fixtures/schemas')
 const { 
   authCheckBody, 
   uploadDropBoxAPIArg,
@@ -19,6 +19,9 @@ const {
   } = require('../fixtures/constants')
   let accessToken;
   let metadataValues;
+  let uploadResponse;
+  let metadataResponse;
+  let deleteResponse;
 describe('Should test DropBox api with retrieving oauth2 token, uploading the file, checking it metadata and deleting it', () => {
   it('Should successfully retrieve oauth2 authorization token from DropBox API and save it', () => {
     var options = {
@@ -29,7 +32,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
         'Cookie': 'locale=en; t=MHEYc5dUJHUnxofca9PH9XEQ'
       },
       body: {
-        refresh_token: Cypress.env('DropBoxToken'),
+        refresh_token: Cypress.env('DropBoxToken').slice(3),
         grant_type: 'refresh_token', 
         client_id: Cypress.env('appKey'), 
         client_secret: Cypress.env('appSecret')
@@ -41,7 +44,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     .then(response => {
       expect(response.status).to.be.equal(200)
       expect(response.body).to.include.key('access_token')
-      accessToken = CryptoJS.AES.encrypt(response.body.access_token, Cypress.env('secret'))
+      accessToken = CryptoJS.AES.encrypt(response.body.access_token, Cypress.env('secret'))     
     })
   });
   it('Should successfully check user authentication on DropBox', () => {
@@ -81,7 +84,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     })  
   })
   it('Should successfully upload text file to DropBox via API', () => {
-    var options = {
+    let options = {
       method: 'POST',
       url: `${Cypress.env('filesEndpoint')}/files/upload`,
       headers: {
@@ -96,17 +99,40 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     cy.get('@upload')
     .then(response => {
       expect(response.status).to.be.equal(200)
-      expect(response.body).to.be.jsonSchema(uploadResponseSchema);
-      expect(response.body.name).to.equal(fileName)
-      expect(Object.keys(response.body).length).to.equal(uploadResponseLength)
-      metadata.forEach((key,i) => {
-        expect(Object.keys(response.body)[i]).to.equal(key)
-      })
+      uploadResponse = response.body;
       metadataValues = Object.values(response.body)
     })
   })
+  describe(`Should perform assertions on 'upload file' response`, () => {
+    it(`Validate 'upload file' response body upon the schema`, () => {
+      cy.wrap(uploadResponse)
+        .then(response => {
+          expect(response).to.be.jsonSchema(uploadResponseSchema);
+        })
+    })
+    it(`Check 'upload file' response key 'name' contains value equal '${fileName}'`, () => {
+      cy.wrap(uploadResponse)
+      .then(response => {
+        expect(response.name).to.equal(fileName)
+      })
+    })
+    it(`Check 'upload file' response body length equal ${uploadResponseLength}`, () => {
+      cy.wrap(uploadResponse)
+      .then(response => {
+      expect(Object.keys(response).length).to.equal(uploadResponseLength)
+      })
+    })
+    it(`Check 'upload file' response body keys`, () => {
+      cy.wrap(uploadResponse)
+      .then(response => {
+        metadata.forEach((key,i) => {
+          expect(Object.keys(response)[i]).to.equal(key)
+        })
+      })
+    })
+  })
   it('Should successfully search for uploaded file and validate it\'s metadata', () => {
-    var options = {
+    let options = {
       method: 'POST',
       url: `${Cypress.env('authEndpoint')}/files/get_metadata`,
       headers: {
@@ -125,15 +151,33 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     cy.get('@metadataCheck')
     .then(response => {
       expect(response.status).to.be.equal(200)
-      expect(response.body).to.be.jsonSchema(getMetadataResponseSchema);
-      expect(Object.keys(response.body).length).to.equal(metadataResponseLength)
-      Object.values(response.body).slice(1).forEach((el, i) => {
-        expect(el).to.equal(metadataValues[i])
+      metadataResponse = response.body
+    })
+  })
+  describe(`Should perform assertions on 'search uploaded file metadata' response`, () => { 
+    it(`Validate 'file metadata' response body upon the schema`, () => {
+      cy.wrap(metadataResponse)
+        .then(response => {
+          expect(response).to.be.jsonSchema(getMetadataResponseSchema);
+        })
+    })
+    it(`Check 'file metadata' response body length equal ${metadataResponseLength}`, () => {
+      cy.wrap(metadataResponse)
+      .then(response => {
+      expect(Object.keys(response).length).to.equal(metadataResponseLength)
+      })
+    })
+    it(`Check 'file metadata' response body keys values`, () => {
+      cy.wrap(metadataResponse)
+      .then(response => {
+        Object.values(response).slice(1).forEach((el, i) => {
+          expect(el).to.equal(metadataValues[i])
+        })
       })
     })
   })
   it('Should successfully delete uploaded file', () => {
-    var options = {
+    let options = {
       method: 'POST',
       url: `${Cypress.env('authEndpoint')}/files/delete_v2`,
       headers: {
@@ -150,9 +194,28 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
     cy.get('@delete')
     .then(response => {
       expect(response.status).to.be.equal(200)
-      expect(Object.keys(response.body.metadata).length).to.equal(metadataResponseLength)
-      Object.values(response.body).slice(1).forEach((el, i) => {
-        expect(el).to.equal(metadataValues[i])
+      deleteResponse = response.body.metadata
+    })
+  });
+  describe(`Should perform assertions on 'delete file' response`, () => { 
+    it(`Validate 'delete file' response body upon the schema`, () => {
+      cy.wrap(deleteResponse)
+        .then(response => {
+          expect(response).to.be.jsonSchema(deleteSchema);
+        })
+    })
+    it(`Check 'delete file' response 'metadata' key has number of keys equal ${metadataResponseLength}`, () => {
+      cy.wrap(deleteResponse)
+      .then(response => {
+      expect(Object.keys(response).length).to.equal(metadataResponseLength)
+      })
+    })
+    it(`Check 'delete file' response 'metadata' keys values`, () => {
+      cy.wrap(deleteResponse)
+      .then(response => {
+        Object.values(response).slice(1).forEach((el, i) => {
+          expect(el).to.equal(metadataValues[i])
+      })
       })
     })
   })

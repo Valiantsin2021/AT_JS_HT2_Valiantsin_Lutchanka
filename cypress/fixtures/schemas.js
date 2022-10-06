@@ -74,3 +74,47 @@ exports.getMetadataResponseSchema = {
         }
     }
 }
+
+exports.deleteSchema = {
+    "type": "object",
+    "properties": {
+        "metadata": {
+            "type": "object",
+            "properties": {
+                ".tag": {
+                    "type": "string",
+                },
+                    "name": {
+                    "type": "string",
+                },
+                    "path_lower": {
+                    "type": "string",
+                },
+                "path_display": {
+                    "type": "string",
+                },
+                "id": {
+                    "type": "string",
+                },
+                "client_modified": {
+                    "type": "string",
+                },
+                "server_modified": {
+                    "type": "string",
+                },
+                "rev": {
+                    "type": "string",
+                },
+                "size": {
+                    "type": "number",
+                },
+                "is_downloadable": {
+                    "type": "boolean",
+                },
+                "content_hash": {
+                    "type": "string",
+                }
+            }
+        }
+    },
+}

@@ -1,126 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Dropbox-API-upload/download-tests" tests="17" time="4.199">
-  <testsuite name="Get token / Get token" id="f55ee0c4-13d7-40a4-a8d9-565492b619f1" timestamp="2022-10-06T17:09:52.254Z" tests="4" failures="0" errors="0" time="0.158">
-    <testcase name="Check response time is less than 3000ms" time="0.158" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.158" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.158" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response body has key 'access_token'" time="0.158" classname="DropboxApiUploadDownloadTests"/>
+<testsuites name="Dropbox-API-upload/download-tests" tests="17" time="4.116">
+  <testsuite name="Get token / Get token" id="70c85eec-fa4b-4b94-8139-6b73a9099982" timestamp="2022-10-06T17:36:06.177Z" tests="4" failures="0" errors="0" time="0.355">
+    <testcase name="Check response time is less than 3000ms" time="0.355" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.355" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.355" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response body has key 'access_token'" time="0.355" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Authorization tests / User authentication" id="0efb524d-0a61-4034-b7c7-43e7afcba95f" timestamp="2022-10-06T17:09:52.254Z" tests="6" failures="0" errors="0" time="0.149">
-    <testcase name="Check response time is less than 3000ms" time="0.149" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.149" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.149" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.149" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.149" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response body has key with value" time="0.149" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Authorization tests / User authentication" id="89dec8a5-4508-43ab-9914-3062cd0f4513" timestamp="2022-10-06T17:36:06.177Z" tests="6" failures="0" errors="0" time="0.107">
+    <testcase name="Check response time is less than 3000ms" time="0.107" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.107" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.107" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.107" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.107" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response body has key with value" time="0.107" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Authorization tests / Check app" id="c92a9c11-7bd8-4dbd-bf8b-134ba78cfcda" timestamp="2022-10-06T17:09:52.254Z" tests="6" failures="0" errors="0" time="0.075">
-    <testcase name="Check response time is less than 3000ms" time="0.075" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.075" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.075" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.075" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.075" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response body has key with value" time="0.075" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Authorization tests / Check app" id="2054485b-1cad-4c10-ba1f-bb28051ffbbe" timestamp="2022-10-06T17:36:06.177Z" tests="6" failures="0" errors="0" time="0.024">
+    <testcase name="Check response time is less than 3000ms" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response body has key with value" time="0.024" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Upload file tests / File upload test" id="c2aa3291-a481-44ca-b43b-9ff1a2a203a4" timestamp="2022-10-06T17:09:52.254Z" tests="9" failures="0" errors="0" time="0.940">
-    <testcase name="Check response time is less than 3000ms" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check 'Strict-Transport-Security' response header value is 'max-age=31536000; includeSubDomains; preload'" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response has key 'name' with value equal to uploaded file name" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is equal 10" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys are present" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response 'is_downloadable' value" time="0.940" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Validate response json schema" time="0.940" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Upload file tests / File upload test" id="6e63b090-993a-4e97-af0e-deed992c89be" timestamp="2022-10-06T17:36:06.177Z" tests="9" failures="0" errors="0" time="0.939">
+    <testcase name="Check response time is less than 3000ms" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check 'Strict-Transport-Security' response header value is 'max-age=31536000; includeSubDomains; preload'" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response has key 'name' with value equal to uploaded file name" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is equal 10" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys are present" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response 'is_downloadable' value" time="0.939" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Validate response json schema" time="0.939" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Upload file tests / Search uploaded file" id="82940756-0e4c-4fba-be91-4819c5b10fbe" timestamp="2022-10-06T17:09:52.254Z" tests="8" failures="0" errors="0" time="0.237">
-    <testcase name="Check response time is less than 3000ms" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Security-Policy' value is 'sandbox" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is equal 1" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response key 'has_more' value equal to 'false'" time="0.237" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Validate response json schema" time="0.237" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Upload file tests / Search uploaded file" id="db5dde70-5caa-4dbd-bf6a-7ee8c221f97e" timestamp="2022-10-06T17:36:06.177Z" tests="8" failures="0" errors="0" time="0.247">
+    <testcase name="Check response time is less than 3000ms" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Security-Policy' value is 'sandbox" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is equal 1" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response key 'has_more' value equal to 'false'" time="0.247" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Validate response json schema" time="0.247" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file via search endpoint" id="9aba45b6-d205-4e12-8082-563ee82b2c9a" timestamp="2022-10-06T17:09:52.254Z" tests="12" failures="0" errors="0" time="0.186">
-    <testcase name="Check response time is less than 3000ms" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadadta has key 'name' with value equal to uploaded file name" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is 1" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadata 'name' key has value 'text.txt'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadata 'id' key has value 'id:kNz2VS8OLSwAAAAAAAAA7Q'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadata 'content_hash' key has value 'fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadata 'is_downloadable' key has value 'true'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check metadata 'size' key has value '19'" time="0.186" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Validate response json schema" time="0.186" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file via search endpoint" id="ef7fd892-9f98-4263-aa4f-28346cf8f4c9" timestamp="2022-10-06T17:36:06.177Z" tests="12" failures="0" errors="0" time="0.175">
+    <testcase name="Check response time is less than 3000ms" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadadta has key 'name' with value equal to uploaded file name" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is 1" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadata 'name' key has value 'text.txt'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadata 'id' key has value 'id:kNz2VS8OLSwAAAAAAAAA8Q'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadata 'content_hash' key has value 'fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadata 'is_downloadable' key has value 'true'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check metadata 'size' key has value '19'" time="0.175" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Validate response json schema" time="0.175" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file metadata via metadata endpoint" id="4183a715-8194-489b-bca0-fd6964d66299" timestamp="2022-10-06T17:09:52.254Z" tests="7" failures="0" errors="0" time="0.093">
-    <testcase name="Check response time is less than 3000ms" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is equal 11" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAAA7Q,2022-10-06T17:09:53Z,2022-10-06T17:09:53Z,5ea60c30c581cb94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc" time="0.093" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Validate response json schema" time="0.093" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file metadata via metadata endpoint" id="3741ea1b-d87f-411d-9a7a-5ab9d9464a8a" timestamp="2022-10-06T17:36:06.177Z" tests="7" failures="0" errors="0" time="0.089">
+    <testcase name="Check response time is less than 3000ms" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is equal 11" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAAA8Q,2022-10-06T17:36:07Z,2022-10-06T17:36:07Z,5ea6120ddec18b94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc" time="0.089" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Validate response json schema" time="0.089" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Delete file tests / Delete uploaded file" id="c3a5ab79-f6cc-4950-98db-85fbd231a00d" timestamp="2022-10-06T17:09:52.254Z" tests="7" failures="0" errors="0" time="1.744">
-    <testcase name="Check response time is less than 3000ms" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is equal 11" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAAA7Q,2022-10-06T17:09:53Z,2022-10-06T17:09:53Z,5ea60c30c581cb94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc" time="1.744" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Validate response json schema" time="1.744" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Delete file tests / Delete uploaded file" id="11acabe4-33f0-4f7f-bbda-545d67332d4e" timestamp="2022-10-06T17:36:06.177Z" tests="7" failures="0" errors="0" time="1.599">
+    <testcase name="Check response time is less than 3000ms" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is equal 11" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAAA8Q,2022-10-06T17:36:07Z,2022-10-06T17:36:07Z,5ea6120ddec18b94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc" time="1.599" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Validate response json schema" time="1.599" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / File upload test wrong endpoint" id="ee876148-678e-44fc-805e-797c72597bb4" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.078">
-    <testcase name="Check response time is less than 3000ms" time="0.078" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.078" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.078" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Search uploaded file wrong endpoint" id="16990627-d342-4442-8cd2-62fe1cf75b05" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.027">
-    <testcase name="Check response time is less than 3000ms" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Get uploaded file metadata wrong endpoint" id="b706bc38-521b-4a69-ba36-3fae15c7a3b7" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.061">
-    <testcase name="Check response time is less than 3000ms" time="0.061" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.061" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.061" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Delete uploaded file wrong endpoint" id="09584d92-a5c7-4026-a2fe-0b68a088a3ce" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.027">
-    <testcase name="Check response time is less than 3000ms" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.027" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong request body / Search uploaded file wrong request body" id="2809f463-e68d-4eda-92d9-65b5564fae58" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.036">
-    <testcase name="Check response time is less than 3000ms" time="0.036" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.036" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.036" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong request body / Get uploaded file metadata wrong body 'path' key value" id="7d84fe01-9ca5-45dc-bbc1-0467136e2baf" timestamp="2022-10-06T17:09:52.254Z" tests="4" failures="0" errors="0" time="0.095">
-    <testcase name="Check response time is less than 3000ms" time="0.095" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.095" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.095" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response has error keys 'error_summary,error''" time="0.095" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / wrong request body / Delete uploaded file wrong response body 'path' key value" id="af1b7aad-c3c8-4e67-94f2-be8cc2a096f6" timestamp="2022-10-06T17:09:52.254Z" tests="4" failures="0" errors="0" time="0.123">
-    <testcase name="Check response time is less than 3000ms" time="0.123" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.123" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.123" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response has error keys 'error_summary,error''" time="0.123" classname="DropboxApiUploadDownloadTests"/>
-  </testsuite>
-  <testsuite name="Negative tests / File upload test wrong Header 'Content-Type" id="b8c989d2-cc3c-48a4-821e-9b0a6f281d78" timestamp="2022-10-06T17:09:52.254Z" tests="3" failures="0" errors="0" time="0.087">
+  <testsuite name="Negative tests / wrong endpoint / File upload test wrong endpoint" id="2c21e685-ed27-46f6-9b8d-7484256bba7e" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.087">
     <testcase name="Check response time is less than 3000ms" time="0.087" classname="DropboxApiUploadDownloadTests"/>
     <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.087" classname="DropboxApiUploadDownloadTests"/>
     <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.087" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / Repeat delete uploaded file" id="58e65ca1-a9db-4916-b3cd-87b727f3ba0a" timestamp="2022-10-06T17:09:52.254Z" tests="4" failures="0" errors="0" time="0.083">
-    <testcase name="Check response time is less than 3000ms" time="0.083" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.083" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.083" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response has error keys 'error_summary,error''" time="0.083" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / wrong endpoint / Search uploaded file wrong endpoint" id="58b81b91-9337-4382-b55d-05e5fd4a9c53" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.027">
+    <testcase name="Check response time is less than 3000ms" time="0.027" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.027" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.027" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / wrong endpoint / Get uploaded file metadata wrong endpoint" id="9537a8ef-7be0-44d0-bc87-aecafb6a34c4" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.013">
+    <testcase name="Check response time is less than 3000ms" time="0.013" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.013" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.013" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / wrong endpoint / Delete uploaded file wrong endpoint" id="76760eb6-c664-40b2-93b0-4caedf927357" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.014">
+    <testcase name="Check response time is less than 3000ms" time="0.014" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.014" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.014" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / wrong request body / Search uploaded file wrong request body" id="779d438a-18e5-4584-816f-6ddce104848c" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.036">
+    <testcase name="Check response time is less than 3000ms" time="0.036" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.036" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.036" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / wrong request body / Get uploaded file metadata wrong body 'path' key value" id="60ceb319-4908-49ab-8ccc-3223be02c22c" timestamp="2022-10-06T17:36:06.177Z" tests="4" failures="0" errors="0" time="0.085">
+    <testcase name="Check response time is less than 3000ms" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response has error keys 'error_summary,error''" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / wrong request body / Delete uploaded file wrong response body 'path' key value" id="765b594f-724c-4841-93dd-b271202f1715" timestamp="2022-10-06T17:36:06.177Z" tests="4" failures="0" errors="0" time="0.125">
+    <testcase name="Check response time is less than 3000ms" time="0.125" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.125" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.125" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response has error keys 'error_summary,error''" time="0.125" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / File upload test wrong Header 'Content-Type" id="2476facc-2343-4452-ba4a-9e08e5b1e9f4" timestamp="2022-10-06T17:36:06.177Z" tests="3" failures="0" errors="0" time="0.080">
+    <testcase name="Check response time is less than 3000ms" time="0.080" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.080" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.080" classname="DropboxApiUploadDownloadTests"/>
+  </testsuite>
+  <testsuite name="Negative tests / Repeat delete uploaded file" id="8db066f2-8fb8-4487-b43c-21583f3b43b8" timestamp="2022-10-06T17:36:06.177Z" tests="4" failures="0" errors="0" time="0.114">
+    <testcase name="Check response time is less than 3000ms" time="0.114" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of 'Bad Request,Conflict,Not Found'" time="0.114" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.114" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response has error keys 'error_summary,error''" time="0.114" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
 </testsuites>

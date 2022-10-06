@@ -32,7 +32,7 @@ describe('Should test DropBox api with retrieving oauth2 token, uploading the fi
         'Cookie': 'locale=en; t=MHEYc5dUJHUnxofca9PH9XEQ'
       },
       body: {
-        refresh_token: Cypress.env('DropBoxToken').slice(3),
+        refresh_token: CryptoJS.AES.decrypt(Cypress.env('token'), Cypress.env('secret')).toString(CryptoJS.enc.Utf8),
         grant_type: 'refresh_token', 
         client_id: Cypress.env('appKey'), 
         client_secret: Cypress.env('appSecret')

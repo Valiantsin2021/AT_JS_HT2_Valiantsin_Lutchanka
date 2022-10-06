@@ -32,7 +32,19 @@
 					],
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "yc9q84x3d4swx3m",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "a7c7fflsxxus9n0",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -41,22 +53,12 @@
 							"urlencoded": [
 								{
 									"key": "refresh_token",
-									"value": "_kK467zd1g8AAAAAAAAAAWR714ni0STQHGQr1AQz8fL3GiATyQD1eF33VImPQYvA",
+									"value": "DiZYRHehtyIAAAAAAAAAAdhL6UeMu4HplXWBZdz262N-lNynUgpdpBRSD8mOAXUV",
 									"type": "text"
 								},
 								{
 									"key": "grant_type",
 									"value": "refresh_token",
-									"type": "text"
-								},
-								{
-									"key": "client_id",
-									"value": "a7c7fflsxxus9n0",
-									"type": "text"
-								},
-								{
-									"key": "client_secret",
-									"value": "yc9q84x3d4swx3m",
 									"type": "text"
 								}
 							]

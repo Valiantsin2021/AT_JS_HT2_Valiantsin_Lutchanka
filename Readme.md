@@ -2,6 +2,8 @@
 
 ## This repository purpose is to perform API positive and negative test automation of DropBox upload, check metadata and delete file features https://www.dropbox.com/
 
+## Report page https://valiantsin2021.github.io/AT_JS_HT2_Valiantsin_Lutchanka/
+
 The Dropbox account under the test is created for the testing purposes only and is not a private or personal. Authorization credentials provided in tests are for learning purposes only and to provide the possibility to check the automation task accomplishment.
 
 ## Technology used
@@ -38,6 +40,7 @@ The Dropbox account under the test is created for the testing purposes only and 
 4. Mochawesome report
 5. Github Actions yml file
 6. Jenkiinsfile
+7. Response json schema validation for upload, check metadata and delete file scenarios.
 
 ## Setup:
 

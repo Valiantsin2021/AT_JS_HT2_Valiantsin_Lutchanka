@@ -41,7 +41,7 @@
 							"urlencoded": [
 								{
 									"key": "refresh_token",
-									"value": "d9mDZN6CovcAAAAAAAAAAZiZ2W0rEw99JaKvQFGHTHnIcumENHUVEFfjGOOsRVAu",
+									"value": "_kK467zd1g8AAAAAAAAAAWR714ni0STQHGQr1AQz8fL3GiATyQD1eF33VImPQYvA",
 									"type": "text"
 								},
 								{
@@ -51,12 +51,12 @@
 								},
 								{
 									"key": "client_id",
-									"value": "{{appKey}}",
+									"value": "a7c7fflsxxus9n0",
 									"type": "text"
 								},
 								{
 									"key": "client_secret",
-									"value": "{{appSecret}}",
+									"value": "yc9q84x3d4swx3m",
 									"type": "text"
 								}
 							]
@@ -159,12 +159,12 @@
 									"basic": [
 										{
 											"key": "password",
-											"value": "{{appSecret}}",
+											"value": "yc9q84x3d4swx3m",
 											"type": "string"
 										},
 										{
 											"key": "username",
-											"value": "{{appKey}}",
+											"value": "a7c7fflsxxus9n0",
 											"type": "string"
 										}
 									]

@@ -22,5 +22,10 @@ pipeline {
                 archiveArtifacts artifacts: "newman/*.xml", followSymlinks: false
             }
         }
+        stage('Publish HTML report') {
+            steps {
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'newman', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            }
+        }
     }
 }

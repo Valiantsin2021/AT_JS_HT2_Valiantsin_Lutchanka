@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     env: {
-      token: 'U2FsdGVkX19c203FkK4qnTbW7TQWTxiOKXhavSNR/xmHF8/eAIhmxG59+l96R9cBjA3ePEX+gwd778XeF7n5lrRzF+rSOViDw62ix+7nWJKFLO3FhgSuFKjdcBMkqJo1',
+      DropBoxToken: 'mqrefQpql8UAAAAAAAAAARNk4QVVtXiItUMHK4kDT9fLbk5S-eVqZ7Ua4ugtknun',
       authTokenUrl: 'https://api.dropbox.com/oauth2/token',
       secret: 'super555SecretPass=-msd,',
       authEndpoint: 'https://api.dropboxapi.com/2',

@@ -31,6 +31,7 @@ The Dropbox account under the test is created for the testing purposes only and 
 6.  Html report publish on gh-pages
 7.  Response json schema validation for upload, check metadata and delete file scenarios.
 8.  Pre-request scripts for shared tests for various test cases to save in environmental variables
+9.  Add Jenkins_local_host_log with job results on the local machine
 
 ### Cypress
 

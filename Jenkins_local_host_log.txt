@@ -1,0 +1,269 @@
+Started by user Valiantsin Lutchanka
+Obtained Jenkinsfile from git https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential ce02e462-2d72-4f92-a2ac-2fce65442e18
+ > C:\Program Files\Git\bin\git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman\.git # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git # timeout=10
+Fetching upstream changes from https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > git --version # 'git version 2.37.1.windows.1'
+using GIT_ASKPASS to set credentials Github
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 893096bd18d20ff8a0a1a51271711fe0e1c26da4 (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 893096bd18d20ff8a0a1a51271711fe0e1c26da4 # timeout=10
+Commit message: "add publishing of HTML report to Jenkinsfile"
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk 083fa7b79b34fd69ea0a9206cef7133287540ba2 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git download)
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential ce02e462-2d72-4f92-a2ac-2fce65442e18
+ > C:\Program Files\Git\bin\git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman\.git # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git # timeout=10
+Fetching upstream changes from https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > git --version # 'git version 2.37.1.windows.1'
+using GIT_ASKPASS to set credentials Github
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/Valiantsin2021/AT_JS_HT2_Valiantsin_Lutchanka.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 893096bd18d20ff8a0a1a51271711fe0e1c26da4 (refs/remotes/origin/master)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 893096bd18d20ff8a0a1a51271711fe0e1c26da4 # timeout=10
+ > C:\Program Files\Git\bin\git.exe branch -a -v --no-abbrev # timeout=10
+ > C:\Program Files\Git\bin\git.exe branch -D master # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -b master 893096bd18d20ff8a0a1a51271711fe0e1c26da4 # timeout=10
+Commit message: "add publishing of HTML report to Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Install)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman>npm install 
+
+up to date, audited 308 packages in 3s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run API tests)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman>npm test 
+
+> DropBox API test@1.0.0 test
+> newman run Dropbox-API-upload-download-tests.postman_collection.json --environment Dropbox.postman_environment.json --reporters "cli,htmlextra,junit" --reporter-htmlextra-export ./newman/index.html --reporter-junit-export ./newman/report.xml --disable-unicode --color off
+
+newman
+
+Dropbox-API-upload/download-tests
+
+Folder Get token
+Sub-folder Get token
+  POST https://api.dropbox.com/oauth2/token [200 OK, 684B, 361ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response body has key 'access_token'
+
+Folder Positive tests / Authorization tests
+Sub-folder User authentication
+  POST https://api.dropboxapi.com/2/check/user [200 OK, 494B, 655ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check response header 'Content-Security-Policy' and its value
+  Pass  Check response body has key with value
+
+Sub-folder Check app
+  POST https://api.dropboxapi.com/2/check/app [200 OK, 493B, 836ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check response header 'Content-Security-Policy' and its value
+  Pass  Check response body has key with value
+
+Folder Positive tests / Upload file tests
+Sub-folder File upload test
+  POST https://content.dropboxapi.com/2/files/upload [200 OK, 862B, 871ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check 'Strict-Transport-Security' response header value is 'max-age=31536000; includeSubDomains; preload'
+  Pass  Check response has key 'name' with value equal to uploaded file name
+  Pass  Check response keys length is equal 10
+  Pass  Check response keys are present
+  Pass  Check response 'is_downloadable' value
+  Pass  Validate response json schema
+
+Sub-folder Search uploaded file
+  POST https://api.dropboxapi.com/2/files/search_v2 [200 OK, 1.12kB, 198ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Security-Policy' value is 'sandbox
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check response keys length is equal 1
+  Pass  Check response key 'has_more' value equal to 'false'
+  Pass  Validate response json schema
+
+Folder Positive tests / Get File Metadata tests
+Sub-folder Get uploaded file via search endpoint
+  POST https://api.dropboxapi.com/2/files/search_v2 [200 OK, 1.12kB, 517ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check metadadta has key 'name' with value equal to uploaded file name
+  Pass  Check response keys length is 1
+  Pass  Check metadata 'name' key has value 'text.txt'
+  Pass  Check metadata 'id' key has value 'id:kNz2VS8OLSwAAAAAAAABRA'
+  Pass  Check metadata 'content_hash' key has value 'fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc'
+  Pass  Check metadata 'is_downloadable' key has value 'true'
+  Pass  Check metadata 'size' key has value '19'
+  Pass  Validate response json schema
+
+Sub-folder Get uploaded file metadata via metadata endpoint
+  POST https://api.dropboxapi.com/2/files/get_metadata [200 OK, 786B, 861ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check response keys length is equal 11
+  Pass  Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAABRA,2022-10-08T20:30:10Z,2022-10-08T20:30:10Z,5ea8bcb03367bb94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc
+  Pass  Validate response json schema
+
+Folder Positive tests / Delete file tests
+Sub-folder Delete uploaded file
+  POST https://api.dropboxapi.com/2/files/delete_v2 [200 OK, 802B, 1465ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check response status code is 200
+  Pass  Check upload file status message to be 'OK'
+  Pass  Check response header 'Content-Type' and its value is 'application/json'
+  Pass  Check response keys length is equal 11
+  Pass  Check response keys values are equal text.txt,/text.txt,/text.txt,id:kNz2VS8OLSwAAAAAAAABRA,2022-10-08T20:30:10Z,2022-10-08T20:30:10Z,5ea8bcb03367bb94ae2f1,19,true,fd2112ca5793b05e935205bb9891410beb1df1076f60d6dcc754c7377edf6fdc
+  Pass  Validate response json schema
+
+Folder Negative tests / wrong endpoint
+Sub-folder File upload test wrong endpoint
+  POST https://content.dropboxapi.com/2/files/upload/1 [404 Not Found, 26.12kB, 138ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Sub-folder Search uploaded file wrong endpoint
+  POST https://api.dropboxapi.com/2/files/search_v1 [400 Bad Request, 383B, 150ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Sub-folder Get uploaded file metadata wrong endpoint
+  POST https://api.dropboxapi.com/2/files/get_metadat [400 Bad Request, 387B, 129ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Sub-folder Delete uploaded file wrong endpoint
+  POST https://api.dropboxapi.com/2/files/delete_v1 [400 Bad Request, 383B, 289ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Folder Negative tests / wrong request body
+Sub-folder Search uploaded file wrong request body
+  POST https://api.dropboxapi.com/2/files/search_v2 [400 Bad Request, 378B, 248ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Sub-folder Get uploaded file metadata wrong body 'path' key value
+  POST https://api.dropboxapi.com/2/files/get_metadata [409 Conflict, 471B, 542ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+  Pass  Check response has error keys 'error_summary,error''
+
+Sub-folder Delete uploaded file wrong response body 'path' key value
+  POST https://api.dropboxapi.com/2/files/delete_v2 [409 Conflict, 491B, 231ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+  Pass  Check response has error keys 'error_summary,error''
+
+Folder Negative tests
+Sub-folder File upload test wrong Header 'Content-Type
+  POST https://content.dropboxapi.com/2/files/upload [400 Bad Request, 739B, 876ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+
+Sub-folder Repeat delete uploaded file
+  POST https://api.dropboxapi.com/2/files/delete_v2 [409 Conflict, 490B, 290ms]
+  Pass  Check response time is less than 3000ms
+  Pass  Check upload file status message to be one of 'Bad Request,Conflict,Not Found'
+  Pass  Check upload file status code is one of [400, 404, 409]
+  Pass  Check response has error keys 'error_summary,error''
+
+-----------------------------------------------------------------------
+|                         |            executed |              failed |
+--------------------------+---------------------+----------------------
+|              iterations |                   1 |                   0 |
+--------------------------+---------------------+----------------------
+|                requests |                  17 |                   0 |
+--------------------------+---------------------+----------------------
+|            test-scripts |                  65 |                   0 |
+--------------------------+---------------------+----------------------
+|      prerequest-scripts |                  53 |                   0 |
+--------------------------+---------------------+----------------------
+|              assertions |                  89 |                   0 |
+-----------------------------------------------------------------------
+| total run duration: 13.2s                                           |
+-----------------------------------------------------------------------
+| total data received: 29.09kB (approx)                               |
+-----------------------------------------------------------------------
+| average response time: 509ms [min: 129ms, max: 1465ms, s.d.: 360ms] |
+-----------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive artefacts)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish HTML report)
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level C:\ProgramData\Jenkins\.jenkins\workspace\AT_JS_HT2Postman\newman to C:\ProgramData\Jenkins\.jenkins\jobs\AT_JS_HT2Postman\htmlreports\HTML_20Report
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

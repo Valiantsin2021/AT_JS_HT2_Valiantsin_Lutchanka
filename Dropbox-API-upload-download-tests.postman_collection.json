@@ -23,8 +23,7 @@
 									"    pm.expect(response).to.include.key('access_token');\r",
 									"});\r",
 									"\r",
-									"pm.environment.set('token', response.access_token)\r",
-									""
+									"pm.environment.set('token', response.access_token)"
 								],
 								"type": "text/javascript"
 							}
@@ -265,21 +264,23 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"const VariablesData = pm.environment.get('VariablesData')\r",
+											"\r",
 											"pm.test(`Check 'Strict-Transport-Security' response header value is '${pm.environment.get('Strict-Transport-Security')}'`, function () {\r",
 											"    pm.response.to.have.header(\"Strict-Transport-Security\", pm.environment.get('Strict-Transport-Security'));\r",
 											"});\r",
 											"const response = pm.response.json();\r",
 											"\r",
 											"pm.test(\"Check response has key 'name' with value equal to uploaded file name\", function () {\r",
-											"    pm.expect(response.name).to.eql(pm.environment.get('fileName'));\r",
+											"    pm.expect(response.name).to.eql(VariablesData.fileName);\r",
 											"});\r",
 											"\r",
-											"pm.test(`Check response keys length is equal ${pm.environment.get('uploadResponseLength')}`, function () {\r",
-											"    pm.expect(Object.keys(response).length).to.eql(+pm.environment.get('uploadResponseLength'));\r",
+											"pm.test(`Check response keys length is equal ${VariablesData.uploadResponseLength}`, function () {\r",
+											"    pm.expect(Object.keys(response).length).to.eql(+VariablesData.uploadResponseLength);\r",
 											"});\r",
 											"\r",
 											"pm.test(`Check response keys are present`, function () {\r",
-											"    const keys = pm.environment.get('metadata').split(',');\r",
+											"    const keys = VariablesData.metadata.split(',');\r",
 											"    keys.forEach((key,i) => {\r",
 											"        pm.expect(Object.keys(response)[i]).to.equal(key);\r",
 											"    })\r",
@@ -351,16 +352,6 @@
 								"disabledSystemHeaders": {}
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -400,6 +391,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"const VariablesData = pm.environment.get('VariablesData')\r",
+											"\r",
 											"pm.test(`Check response header 'Content-Security-Policy' value is '${pm.environment.get('Content-Security-Policy')}`, function () {\r",
 											"    pm.response.to.have.header(\"Content-Security-Policy\", pm.environment.get('Content-Security-Policy'));\r",
 											"});\r",
@@ -408,8 +401,8 @@
 											"});\r",
 											"const response = pm.response.json();\r",
 											"\r",
-											"pm.test(`Check response keys length is equal ${pm.environment.get('searchMatchesLength')}`, function () {\r",
-											"    pm.expect(response.matches.length).to.eql(+pm.environment.get('searchMatchesLength'));\r",
+											"pm.test(`Check response keys length is equal ${VariablesData.searchMatchesLength}`, function () {\r",
+											"    pm.expect(response.matches.length).to.eql(+VariablesData.searchMatchesLength);\r",
 											"});\r",
 											"\r",
 											"pm.test(`Check response key 'has_more' value equal to 'false'`, function () {\r",
@@ -517,16 +510,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -537,7 +520,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"{{fileName}}\"\r\n}"
+									"raw": "{\r\n    \"query\": \"{{text.txt}}\"\r\n}s"
 								},
 								"url": {
 									"raw": "{{authEndpoint}}/files/search_v2",
@@ -584,16 +567,18 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"const VariablesData = pm.environment.get('VariablesData')\r",
+											"\r",
 											"const response = pm.response.json();\r",
 											"const metadata = response.matches[0].metadata.metadata\r",
 											"const metadataValues = pm.environment.get('metadataValues')\r",
 											"\r",
 											"pm.test(\"Check metadadta has key 'name' with value equal to uploaded file name\", function () {\r",
-											"    pm.expect(metadata.name).to.eql(pm.environment.get('fileName'));\r",
+											"    pm.expect(metadata.name).to.eql(VariablesData.fileName);\r",
 											"});\r",
 											"\r",
-											"pm.test(`Check response keys length is ${pm.environment.get('searchMatchesLength')}`, function () {\r",
-											"    pm.expect(response.matches.length).to.eql(+pm.environment.get('searchMatchesLength'));\r",
+											"pm.test(`Check response keys length is ${VariablesData.searchMatchesLength}`, function () {\r",
+											"    pm.expect(response.matches.length).to.eql(+VariablesData.searchMatchesLength);\r",
 											"});\r",
 											"\r",
 											"pm.test(`Check metadata 'name' key has value '${metadataValues[0]}'`, function () {\r",
@@ -625,16 +610,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -645,7 +620,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"{{fileName}}\"\r\n}"
+									"raw": "{\r\n    \"query\": \"{{text.txt}}\"\r\n}"
 								},
 								"url": {
 									"raw": "{{authEndpoint}}/files/search_v2",
@@ -668,9 +643,10 @@
 									"script": {
 										"exec": [
 											"const response = pm.response.json();\r",
+											"const VariablesData = pm.environment.get('VariablesData')\r",
 											"\r",
-											"pm.test(`Check response keys length is equal ${pm.environment.get('metadataResponseLength')}`, function () {\r",
-											"    pm.expect(Object.keys(response).length).to.eql(+pm.environment.get('metadataResponseLength'));\r",
+											"pm.test(`Check response keys length is equal ${VariablesData.metadataResponseLength}`, function () {\r",
+											"    pm.expect(Object.keys(response).length).to.eql(+VariablesData.metadataResponseLength);\r",
 											"});\r",
 											"\r",
 											"pm.test(`Check response keys values are equal ${pm.environment.get('metadataValues')}`, function () {\r",
@@ -734,16 +710,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -803,12 +769,13 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"const VariablesData = pm.environment.get('VariablesData')\r",
 											"\r",
 											"const response = pm.response.json();\r",
 											"const metadata = response.metadata;\r",
 											"\r",
-											"pm.test(`Check response keys length is equal ${pm.environment.get('metadataResponseLength')}`, function () {\r",
-											"    pm.expect(Object.keys(metadata).length).to.eql(+pm.environment.get('metadataResponseLength'));\r",
+											"pm.test(`Check response keys length is equal ${VariablesData.metadataResponseLength}`, function () {\r",
+											"    pm.expect(Object.keys(metadata).length).to.eql(+VariablesData.metadataResponseLength);\r",
 											"});\r",
 											"\r",
 											"pm.test(`Check response keys values are equal ${pm.environment.get('metadataValues')}`, function () {\r",
@@ -876,16 +843,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -970,7 +927,6 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"\r",
 											""
 										],
 										"type": "text/javascript"
@@ -981,16 +937,6 @@
 								"disabledSystemHeaders": {}
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -1047,16 +993,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -1096,16 +1032,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -1145,16 +1071,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -1261,7 +1177,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"eval(pm.environment.get('checkStatusError'))();"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -1310,7 +1226,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"eval(pm.environment.get('checkStatusError'))();"
+											""
 										],
 										"type": "text/javascript"
 									}
@@ -1391,16 +1307,6 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -1448,16 +1354,6 @@
 						}
 					],
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -1499,8 +1395,10 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(`Check upload file status message to be one of '${pm.environment.get('errorStatusMsg').split(',')}'`, function () {",
-							"    pm.expect(pm.response.status).to.be.oneOf(pm.environment.get('errorStatusMsg').split(','));",
+							"const VariablesData = pm.environment.get('VariablesData')",
+							"",
+							"pm.test(`Check upload file status message to be one of ${VariablesData.errorStatusMsg.split(',')}`, function () {",
+							"    pm.expect(pm.response.status).to.be.oneOf(VariablesData.errorStatusMsg.split(','));",
 							"});",
 							"",
 							"pm.test(\"Check upload file status code is one of [400, 404, 409]\", function () {",
@@ -1517,7 +1415,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "•••••••",
+				"value": "{{token}}",
 				"type": "string"
 			}
 		]
@@ -1528,13 +1426,28 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
+					"class VariablesData {",
+					"    constructor() {",
+					"        this.statusOk = 'OK'",
+					"        this.errorResponse = 'error_summary,error'",
+					"        this.errorStatusMsg = 'Bad Request,Conflict,Not Found'",
+					"        this.uploadResponseLength = 10",
+					"        this.metadataResponseLength = 11",
+					"        this.searchMatchesLength = 1",
+					"        this.fileName = 'text.txt'",
+					"        this.metadata = 'name,path_lower,path_display,id,client_modified,server_modified,rev,size,is_downloadable,content_hash'",
+					"    }",
+					"}",
+					"pm.environment.set('VariablesData', new VariablesData())",
+					"",
 					"const checkStatusOk = () =>{",
 					"    pm.test(\"Check response status code is 200\", function () {",
 					"        pm.response.to.have.status(200);",
 					"    });",
 					"",
-					"    pm.test(`Check upload file status message to be '${pm.environment.get('successStatusMsg')}'`, function () {",
-					"        pm.expect(pm.response.status).to.equal(pm.environment.get('successStatusMsg'));",
+					"    const VariablesData = pm.environment.get('VariablesData')",
+					"    pm.test(`Check upload file status message to be '${VariablesData.statusOk}'`, function () {",
+					"        pm.expect(pm.response.status).to.equal(VariablesData.statusOk);",
 					"    });",
 					"}",
 					"pm.environment.set('checkStatusOk', checkStatusOk.toString())",
@@ -1542,9 +1455,9 @@
 					"const checkStatusError = () =>{",
 					"",
 					"    const response = pm.response.json();",
-					"",
-					"    pm.test(`Check response has error keys '${pm.environment.get('errorResponse').split(',')}''`, function () {",
-					"        pm.expect(response).to.have.keys(pm.environment.get('errorResponse').split(','));",
+					"    const VariablesData = pm.environment.get('VariablesData')",
+					"    pm.test(`Check response has error keys '${VariablesData.errorResponse.split(',')}'`, function () {",
+					"        pm.expect(response).to.have.keys(VariablesData.errorResponse.split(','));",
 					"    });",
 					"}",
 					"pm.environment.set('checkStatusError', checkStatusError.toString())"
@@ -1558,8 +1471,7 @@
 				"exec": [
 					"pm.test(\"Check response time is less than 3000ms\", function () {",
 					"    pm.expect(pm.response.responseTime).to.be.below(3000);",
-					"});",
-					""
+					"});"
 				]
 			}
 		}

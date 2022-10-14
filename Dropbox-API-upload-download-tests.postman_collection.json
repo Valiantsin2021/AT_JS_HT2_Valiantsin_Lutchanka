@@ -1177,7 +1177,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											""
+											"eval(pm.environment.get('checkStatusError'))();"
 										],
 										"type": "text/javascript"
 									}
@@ -1226,7 +1226,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											""
+											"eval(pm.environment.get('checkStatusError'))();"
 										],
 										"type": "text/javascript"
 									}
@@ -1426,19 +1426,29 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
+					"const options = {",
+					"        statusOk:'OK',",
+					"        errorResponse: 'error_summary,error',",
+					"        errorStatusMsg: 'Bad Request,Conflict,Not Found',",
+					"        uploadResponseLength: 10,",
+					"        metadataResponseLength: 11,",
+					"        searchMatchesLength: 1,",
+					"        fileName: 'text.txt',",
+					"        metadata: 'name,path_lower,path_display,id,client_modified,server_modified,rev,size,is_downloadable,content_hash'",
+					"    }",
 					"class VariablesData {",
-					"    constructor() {",
-					"        this.statusOk = 'OK'",
-					"        this.errorResponse = 'error_summary,error'",
-					"        this.errorStatusMsg = 'Bad Request,Conflict,Not Found'",
-					"        this.uploadResponseLength = 10",
-					"        this.metadataResponseLength = 11",
-					"        this.searchMatchesLength = 1",
-					"        this.fileName = 'text.txt'",
-					"        this.metadata = 'name,path_lower,path_display,id,client_modified,server_modified,rev,size,is_downloadable,content_hash'",
+					"    constructor(options) {",
+					"        this.statusOk = options.statusOk",
+					"        this.errorResponse = options.errorResponse",
+					"        this.errorStatusMsg = options.errorStatusMsg",
+					"        this.uploadResponseLength = options.uploadResponseLength",
+					"        this.metadataResponseLength = options.metadataResponseLength",
+					"        this.searchMatchesLength = options.searchMatchesLength",
+					"        this.fileName = options.fileName",
+					"        this.metadata = options.metadata",
 					"    }",
 					"}",
-					"pm.environment.set('VariablesData', new VariablesData())",
+					"pm.environment.set('VariablesData', new VariablesData(options))",
 					"",
 					"const checkStatusOk = () =>{",
 					"    pm.test(\"Check response status code is 200\", function () {",

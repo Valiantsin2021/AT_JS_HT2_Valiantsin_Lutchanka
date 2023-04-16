@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Dropbox-API-upload/download-tests" tests="17" time="3.502">
-  <testsuite name="Get token / Get token" id="37ee4dc9-0315-4478-b895-f2021874571b" timestamp="2023-04-16T16:10:13.703Z" tests="4" failures="3" errors="0" time="0.252">
-    <testcase name="Check response time is less than 3000ms" time="0.252" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.252" classname="DropboxApiUploadDownloadTests">
+<testsuites name="Dropbox-API-upload/download-tests" tests="17" time="1.997">
+  <testsuite name="Get token / Get token" id="f8c88497-0632-4e5a-9883-08336a67623b" timestamp="2023-04-16T16:10:32.978Z" tests="4" failures="3" errors="0" time="0.292">
+    <testcase name="Check response time is less than 3000ms" time="0.292" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.292" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 400">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -14,7 +14,7 @@
    at Object.eval sandbox-script.js:1:1).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.252" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.292" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Bad Request' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -26,7 +26,7 @@
    at Object.eval sandbox-script.js:2:1).]]>
       </failure>
     </testcase>
-    <testcase name="Check response body has key 'access_token'" time="0.252" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response body has key 'access_token'" time="0.292" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected { Object (error, error_description) } to contain key 'access_token'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -39,9 +39,9 @@
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Positive tests / Authorization tests / User authentication" id="b3ace18b-52f9-4bfd-9fe1-7ee82c544f54" timestamp="2023-04-16T16:10:13.703Z" tests="6" failures="4" errors="0" time="0.098">
-    <testcase name="Check response time is less than 3000ms" time="0.098" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.098" classname="DropboxApiUploadDownloadTests">
+  <testsuite name="Positive tests / Authorization tests / User authentication" id="d14ca0c0-b7fd-4033-aaf2-f4555398fdaa" timestamp="2023-04-16T16:10:32.978Z" tests="6" failures="4" errors="0" time="0.282">
+    <testcase name="Check response time is less than 3000ms" time="0.282" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.282" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -53,7 +53,7 @@
    at Object.eval sandbox-script.js:1:2).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.098" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.282" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Unauthorized' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -65,8 +65,8 @@
    at Object.eval sandbox-script.js:2:2).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.098" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.098" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.282" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.282" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have header with key 'Content-Security-Policy'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -78,7 +78,7 @@
    at Object.eval sandbox-script.js:2:2).]]>
       </failure>
     </testcase>
-    <testcase name="Check response body has key with value" time="0.098" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response body has key with value" time="0.282" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected undefined to deeply equal 'test'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -91,15 +91,15 @@
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Positive tests / Authorization tests / Check app" id="5fbaac06-fd0d-4f56-a044-a00ad55347ba" timestamp="2023-04-16T16:10:13.703Z" tests="6" failures="0" errors="0" time="0.034">
-    <testcase name="Check response time is less than 3000ms" time="0.034" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.034" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be 'OK'" time="0.034" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.034" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.034" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response body has key with value" time="0.034" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Positive tests / Authorization tests / Check app" id="1e9b16e1-df4e-45bd-a969-7994bd636cad" timestamp="2023-04-16T16:10:32.978Z" tests="6" failures="0" errors="0" time="0.082">
+    <testcase name="Check response time is less than 3000ms" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be 'OK'" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Security-Policy' and its value" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response body has key with value" time="0.082" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Upload file tests / File upload test" id="b4abbf2c-bc66-4728-a6e4-e04ff4fc3fdb" timestamp="2023-04-16T16:10:13.703Z" tests="4" failures="2" errors="1" time="0.144">
+  <testsuite name="Positive tests / Upload file tests / File upload test" id="23da688a-8c34-4b16-96ef-c9277ca5d17e" timestamp="2023-04-16T16:10:32.978Z" tests="4" failures="2" errors="1" time="0.309">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -108,8 +108,8 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.144" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.144" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response time is less than 3000ms" time="0.309" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.309" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 400">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -121,7 +121,7 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:1:4).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.144" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.309" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Bad Request' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -133,11 +133,11 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:2:4).]]>
       </failure>
     </testcase>
-    <testcase name="Check 'Strict-Transport-Security' response header value is 'max-age=31536000; includeSubDomains; preload'" time="0.144" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check 'Strict-Transport-Security' response header value is 'max-age=31536000; includeSubDomains; preload'" time="0.309" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Upload file tests / Search uploaded file" id="715b045b-b50f-42bf-85fb-ae8bd40f3c48" timestamp="2023-04-16T16:10:13.703Z" tests="8" failures="6" errors="0" time="0.025">
-    <testcase name="Check response time is less than 3000ms" time="0.025" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.025" classname="DropboxApiUploadDownloadTests">
+  <testsuite name="Positive tests / Upload file tests / Search uploaded file" id="b265ad53-f956-42dd-8b36-f485d57a760c" timestamp="2023-04-16T16:10:32.978Z" tests="8" failures="6" errors="0" time="0.078">
+    <testcase name="Check response time is less than 3000ms" time="0.078" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -149,7 +149,7 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:1:5).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.025" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Unauthorized' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -161,7 +161,7 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:2:5).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Security-Policy' value is 'sandbox" time="0.025" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response header 'Content-Security-Policy' value is 'sandbox" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have header with key 'Content-Security-Policy'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -173,8 +173,8 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:1:5).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.025" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response keys length is equal 1" time="0.025" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.078" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response keys length is equal 1" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'length')">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -186,7 +186,7 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:3:5).]]>
       </failure>
     </testcase>
-    <testcase name="Check response key 'has_more' value equal to 'false'" time="0.025" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response key 'has_more' value equal to 'false'" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected undefined to deeply equal false">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -198,7 +198,7 @@ Error in call to API function "files/upload": The given OAuth 2 access token is
    at Object.eval sandbox-script.js:4:5).]]>
       </failure>
     </testcase>
-    <testcase name="Validate response json schema" time="0.025" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Validate response json schema" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected data to satisfy schema but found following errors: &#xA;data should have required property 'has_more', data should have required property 'matches'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -213,15 +213,15 @@ data should have required property 'has_more', data should have required propert
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file via search endpoint" id="53011008-a990-4132-8514-4fd4aa3ad15d" timestamp="2023-04-16T16:10:13.703Z" tests="4" failures="2" errors="1" time="0.024">
+  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file via search endpoint" id="08e6a2b7-92d8-4fb3-b66e-b9ca85989ea7" timestamp="2023-04-16T16:10:32.978Z" tests="4" failures="2" errors="1" time="0.073">
     <system-err><![CDATA[Iteration: 0
 
 ---
 testScriptError: Cannot read properties of undefined (reading '0')
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.024" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.024" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response time is less than 3000ms" time="0.073" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.073" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -233,7 +233,7 @@ testScriptError: Cannot read properties of undefined (reading '0')
    at Object.eval sandbox-script.js:1:6).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.024" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.073" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Unauthorized' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -245,9 +245,9 @@ testScriptError: Cannot read properties of undefined (reading '0')
    at Object.eval sandbox-script.js:2:6).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.024" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.073" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file metadata via metadata endpoint" id="ebe1cae3-84d1-4a65-9c16-b44a67d96d09" timestamp="2023-04-16T16:10:13.703Z" tests="4" failures="3" errors="1" time="0.148">
+  <testsuite name="Positive tests / Get File Metadata tests / Get uploaded file metadata via metadata endpoint" id="5556251c-9782-480a-a4b3-e8d83d4413bc" timestamp="2023-04-16T16:10:32.978Z" tests="4" failures="3" errors="1" time="0.097">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -256,8 +256,8 @@ Error in call to API function "files/get_metadata": The given OAuth 2 access to
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.148" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="0.148" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response time is less than 3000ms" time="0.097" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.097" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 400">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -269,7 +269,7 @@ Error in call to API function "files/get_metadata": The given OAuth 2 access to
    at Object.eval sandbox-script.js:1:7).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="0.148" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.097" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Bad Request' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -281,7 +281,7 @@ Error in call to API function "files/get_metadata": The given OAuth 2 access to
    at Object.eval sandbox-script.js:2:7).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.148" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.097" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Content-Type' response header to be 'application/json' but got 'text/plain; charset=utf-8'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -294,7 +294,7 @@ Error in call to API function "files/get_metadata": The given OAuth 2 access to
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Positive tests / Delete file tests / Delete uploaded file" id="0ec17d2f-c63e-40ac-8103-73fbf1ceb3cd" timestamp="2023-04-16T16:10:13.703Z" tests="4" failures="3" errors="1" time="2.430">
+  <testsuite name="Positive tests / Delete file tests / Delete uploaded file" id="f2bd8a77-b1e1-46ca-947b-a6fd032f118e" timestamp="2023-04-16T16:10:32.978Z" tests="4" failures="3" errors="1" time="0.082">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -303,8 +303,8 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="2.430" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check response status code is 200" time="2.430" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response time is less than 3000ms" time="0.082" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response status code is 200" time="0.082" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected response to have status code 200 but got 400">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -316,7 +316,7 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
    at Object.eval sandbox-script.js:1:8).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status message to be 'OK'" time="2.430" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status message to be 'OK'" time="0.082" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Bad Request' to equal 'OK'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -328,7 +328,7 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
    at Object.eval sandbox-script.js:2:8).]]>
       </failure>
     </testcase>
-    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="2.430" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check response header 'Content-Type' and its value is 'application/json'" time="0.082" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Content-Type' response header to be 'application/json' but got 'text/plain; charset=utf-8'">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -341,29 +341,29 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / File upload test wrong endpoint" id="d559cee0-abee-4b11-aff3-e8d8153f151e" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="0" time="0.063">
-    <testcase name="Check response time is less than 3000ms" time="0.063" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.063" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.063" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / wrong endpoint / File upload test wrong endpoint" id="06209416-d903-4de8-97cd-8171a3b16c1c" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="0" time="0.068">
+    <testcase name="Check response time is less than 3000ms" time="0.068" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.068" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.068" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Search uploaded file wrong endpoint" id="1be0b72f-cfd3-48e5-87cc-b6095d373c7a" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="0" time="0.028">
-    <testcase name="Check response time is less than 3000ms" time="0.028" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.028" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.028" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / wrong endpoint / Search uploaded file wrong endpoint" id="628d977b-e923-4f50-ae2b-5cbacffe5018" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="0" time="0.073">
+    <testcase name="Check response time is less than 3000ms" time="0.073" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.073" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.073" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Get uploaded file metadata wrong endpoint" id="a47a6253-7f0e-442b-82fe-e609edd02638" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="0" time="0.025">
-    <testcase name="Check response time is less than 3000ms" time="0.025" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.025" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.025" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / wrong endpoint / Get uploaded file metadata wrong endpoint" id="fa281123-ff8d-455c-9fc4-b3b38624c013" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="0" time="0.072">
+    <testcase name="Check response time is less than 3000ms" time="0.072" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.072" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.072" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong endpoint / Delete uploaded file wrong endpoint" id="be036d60-0534-470c-9490-93390ac7d34a" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="0" time="0.023">
-    <testcase name="Check response time is less than 3000ms" time="0.023" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.023" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.023" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / wrong endpoint / Delete uploaded file wrong endpoint" id="d2c6c42d-65f0-443d-8c2a-16e3437164a0" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="0" time="0.072">
+    <testcase name="Check response time is less than 3000ms" time="0.072" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.072" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.072" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong request body / Search uploaded file wrong request body" id="55aa7d14-61ff-406f-94fd-090f6300aece" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="2" errors="0" time="0.023">
-    <testcase name="Check response time is less than 3000ms" time="0.023" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.023" classname="DropboxApiUploadDownloadTests">
+  <testsuite name="Negative tests / wrong request body / Search uploaded file wrong request body" id="4431866d-768c-42aa-b35f-3f270517885a" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="2" errors="0" time="0.078">
+    <testcase name="Check response time is less than 3000ms" time="0.078" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 'Unauthorized' to be one of [ Array(3) ]">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -375,7 +375,7 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
    at Object.eval sandbox-script.js:1:13).]]>
       </failure>
     </testcase>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.023" classname="DropboxApiUploadDownloadTests">
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.078" classname="DropboxApiUploadDownloadTests">
       <failure type="AssertionFailure" message="expected 401 to be one of [ 400, 404, 409 ]">
         <![CDATA[Failed 1 times.]]>
         <![CDATA[Collection JSON ID: 9a3b310c-8828-4db2-a2e1-5712c75dc6e0.]]>
@@ -388,7 +388,7 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
       </failure>
     </testcase>
   </testsuite>
-  <testsuite name="Negative tests / wrong request body / Get uploaded file metadata wrong body 'path' key value" id="b58818f0-0fa4-4a2f-b59b-9edbc57a5757" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="1" time="0.038">
+  <testsuite name="Negative tests / wrong request body / Get uploaded file metadata wrong body 'path' key value" id="73cf2f01-b045-49d3-9eb2-916eb759e272" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="1" time="0.096">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -397,11 +397,11 @@ Error in call to API function "files/get_metadata": The given OAuth 2 access to
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.038" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.038" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.038" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response time is less than 3000ms" time="0.096" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.096" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.096" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / wrong request body / Delete uploaded file wrong response body 'path' key value" id="3a952958-ace2-4873-a90f-0c8706fd122f" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="1" time="0.060">
+  <testsuite name="Negative tests / wrong request body / Delete uploaded file wrong response body 'path' key value" id="0af26cdb-bbbc-427d-8b4d-4920e7c6b006" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="1" time="0.085">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -410,16 +410,16 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.060" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.060" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.060" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response time is less than 3000ms" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.085" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.085" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / File upload test wrong Header 'Content-Type" id="d8f13d89-af06-4b5b-a6a4-01c86ce898fe" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="0" time="0.028">
-    <testcase name="Check response time is less than 3000ms" time="0.028" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.028" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.028" classname="DropboxApiUploadDownloadTests"/>
+  <testsuite name="Negative tests / File upload test wrong Header 'Content-Type" id="0b5c2346-cc53-477e-9807-c6602421369c" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="0" time="0.078">
+    <testcase name="Check response time is less than 3000ms" time="0.078" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.078" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.078" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
-  <testsuite name="Negative tests / Repeat delete uploaded file" id="43b1c9a4-ed3b-402b-acf4-d62a3238d709" timestamp="2023-04-16T16:10:13.703Z" tests="3" failures="0" errors="1" time="0.059">
+  <testsuite name="Negative tests / Repeat delete uploaded file" id="f3445611-88c9-4a4e-bde8-18565a894218" timestamp="2023-04-16T16:10:32.978Z" tests="3" failures="0" errors="1" time="0.080">
     <system-err><![CDATA[Iteration: 0
 
 ---
@@ -428,8 +428,8 @@ Error in call to API function "files/delete:2": The given OAuth 2 access token
 ^
 ---
 ]]></system-err>
-    <testcase name="Check response time is less than 3000ms" time="0.059" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.059" classname="DropboxApiUploadDownloadTests"/>
-    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.059" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check response time is less than 3000ms" time="0.080" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status message to be one of Bad Request,Conflict,Not Found" time="0.080" classname="DropboxApiUploadDownloadTests"/>
+    <testcase name="Check upload file status code is one of [400, 404, 409]" time="0.080" classname="DropboxApiUploadDownloadTests"/>
   </testsuite>
 </testsuites>

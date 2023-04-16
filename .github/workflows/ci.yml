@@ -29,7 +29,7 @@ jobs:
       run: npm test
 
     - name: Output test results
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: RunReports
         path: newman
